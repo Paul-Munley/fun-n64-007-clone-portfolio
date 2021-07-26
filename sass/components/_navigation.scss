@@ -1,0 +1,6 @@
+.navigation {
+  grid-column: nav-start / nav-end;
+  grid-row: 1 / -1;
+
+  background-image: url(../../assets/manila-folder-background-blurred.png);
+}

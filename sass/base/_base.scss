@@ -38,13 +38,9 @@ body {
   height: 100vh;
   width: 100vw;
   padding: 8rem;
-}
 
-.container {
-  background-image: url(../../assets/manila-folder-background-blurred.png);
-
-  // FOR TESTING PURPOSES
-  height: 85vh;
+  display: grid;
+  grid-template-columns: [container-start] repeat(6, 1fr) [container-end nav-start] 8rem [nav-end];
 }
 
 /* 
