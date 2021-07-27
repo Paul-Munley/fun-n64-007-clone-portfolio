@@ -29,9 +29,6 @@ body {
 }
 
 .background {
-  //   background-color: #565742;
-  // overflow: hidden;
-
   background-image: url(../../assets/main-background-blurred.png);
   background-size: cover;
 
@@ -40,7 +37,7 @@ body {
   padding: 8rem;
 
   display: grid;
-  grid-template-columns: [container-start] repeat(6, 1fr) [container-end nav-start] 8rem [nav-end];
+  grid-template-columns: [container-start] repeat(6, 1fr) [container-end nav-start] 5rem [nav-end];
 }
 
 /* 

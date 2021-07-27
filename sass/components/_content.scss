@@ -4,4 +4,13 @@
 
   // FOR TESTING PURPOSES
   height: 85vh;
+
+  &__image {
+    display: block;
+    height: 25rem;
+    width: auto;
+    margin-left: auto;
+    margin-right: 5rem;
+    margin-top: 5rem;
+  }
 }
