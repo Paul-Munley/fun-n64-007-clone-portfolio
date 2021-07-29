@@ -36,6 +36,61 @@ WAS THE CODE USED TO RECREATE THE PIXELATED LOOK IN THE BACKGROUND AND MANILA FO
   float: left;
 }
  */
+.content {
+  background-image: url(../../assets/manila-folder-background-blurred.png);
+  grid-column: container-start / container-end;
+  display: grid; }
+
+.crest {
+  background-image: url(/assets/logo-crest-2.png);
+  grid-column: col-start 10 / full-end;
+  margin-top: 2rem;
+  display: inline-block;
+  height: 32rem;
+  width: auto; }
+
+.nav {
+  align-self: center; }
+  .nav__list {
+    list-style-type: none; }
+  .nav__item {
+    width: fit-content;
+    padding: 1rem; }
+    .nav__item span {
+      margin-right: 2.5rem; }
+    .nav__item:not(:last-child) {
+      margin-bottom: 3rem; }
+  .nav__item:hover {
+    background-color: rgba(0, 0, 0, 0.2); }
+  .nav__link, .nav__link:active, .nav__link:visited {
+    font-size: 3rem;
+    font-weight: 300;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: transparent;
+    text-shadow: 0 0 2px #000; }
+
+.profile-img {
+  position: relative;
+  grid-column: col-start 1 / col-end 5;
+  grid-row: 1 / 2;
+  margin-top: -1rem; }
+
+.paperclip {
+  position: absolute;
+  z-index: 3;
+  margin-top: -3.7rem;
+  margin-left: 2rem;
+  height: 8rem;
+  width: auto; }
+
+.portrait {
+  position: relative;
+  z-index: 2;
+  height: 45vh;
+  width: auto;
+  box-shadow: -0.4rem 1rem 0.4rem 0.2rem rgba(0, 0, 0, 0.8); }
+
 .tab-nav {
   background-color: transparent;
   grid-column: nav-start / nav-end;
@@ -50,26 +105,29 @@ WAS THE CODE USED TO RECREATE THE PIXELATED LOOK IN THE BACKGROUND AND MANILA FO
     background-image: url(../../assets/manila-folder-background-blurred.png);
     opacity: 0.45;
     clip-path: polygon(0 0, 43% 2%, 100% 13%, 100% 87%, 43% 98%, 0 100%);
+    cursor: pointer;
     writing-mode: vertical-rl;
     display: flex;
     align-items: center;
     justify-content: center; }
-    .tab-nav__item-link {
-      text-align: center;
+    .tab-nav__item:hover .tab-nav__item-link {
+      background-color: rgba(0, 0, 0, 0.3); }
+    .tab-nav__item-link, .tab-nav__item-link:active, .tab-nav__item-link:visited {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 75%;
+      width: 100%;
       font-family: "Odibee Sans", "Roboto", sans-serif;
       font-size: 4rem;
       text-transform: uppercase;
       transform: scaleX(0.5);
       letter-spacing: 4px; }
 
-.content {
-  background-image: url(../../assets/manila-folder-background-blurred.png);
-  grid-column: container-start / container-end;
-  height: 85vh; }
-  .content__image {
-    display: block;
-    height: 25rem;
-    width: auto;
-    margin-left: auto;
-    margin-right: 5rem;
-    margin-top: 5rem; }
+.nav--main {
+  grid-column: 8 / -1; }
+
+.content--home {
+  grid-template-columns: [full-start] 4rem repeat(14, [col-start] 1fr [col-end]) 4rem [full-end];
+  grid-template-rows: repeat(2, 1fr);
+  justify-content: center; }

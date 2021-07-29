@@ -1,16 +1,41 @@
 .content {
   background-image: url(../../assets/manila-folder-background-blurred.png);
   grid-column: container-start / container-end;
+  display: grid;
 
   // FOR TESTING PURPOSES
-  height: 85vh;
+  // height: 85vh;
 
-  &__image {
-    display: block;
-    height: 25rem;
-    width: auto;
-    margin-left: auto;
-    margin-right: 5rem;
-    margin-top: 5rem;
-  }
+  /////////////////////////////////////
+
+  // WILL KEEP THIS CODE FOR NOW BUT MAY DELETE LATER. WAS TRYING TO GET BOX SHADOW TO LOOK EXACLY THE SAME AS THE ONE IN THE GAME. A CLIP PATH WAS NEEDED THOUGH AS THE BOX SHADOW WASNT PERFECTLY STARIGHT. IT SOMEWHAT WORKED BUT THEN I STILL HAD AN ISSUE EVEN WITH MAKING THE ::before ELEMENT THE SAME COLOR AS BACKGROUND. THE COLOR OF THE ::BEFORE ACTUALLY ALSO DIDN'T MATCH UP WITH THE BACKGROUND OF THE MAIN CONTENT AREA. IF YOU ATTEMPT TO DO THIS AGAIN, MAKE SURE THAT YOU ADD THE content__portrait-container div back around the image to be able to add the ::before element &  drop shadow.
+  // &__portrait-container {
+  //   overflow: visible;
+  //   position: relative;
+  //   background-color: rgba(rosybrown, 0.5);
+  //   display: inline-block;
+  //   z-index: 0;
+
+  //   // Shadow to cover our before element. When using box-shadow/drop-shadow on a clip path element you need to use a drop-shadow on the clip path elements PARENT/WRAPPER.
+  //   filter: drop-shadow(-0.5rem 1rem 4px #000);
+
+  //   &::before {
+  //     // Aligning shadow-like box behind portrait container to make shadow look the same as it does in the game. I don't think box-shadow would have been able to achive this shadow style
+  //     display: block;
+  //     position: absolute;
+  //     z-index: 1;
+  //     content: "";
+  //     right: 0;
+  //     height: 100%;
+  //     width: 107%;
+
+  //     // Offsetting and clipping background shadow behind portrait
+  //     background-image: url(/assets/logo-crest-2.png);
+  //     // background-color: black;
+  //     background-size: cover;
+  //     margin-top: 1rem;
+  //     // margin-left: -1.5rem;
+  //     clip-path: polygon(8% 0, 100% 0, 100% 95%, 95% 95%, 95% 100%, 0 100%);
+  //   }
+  // }
 }

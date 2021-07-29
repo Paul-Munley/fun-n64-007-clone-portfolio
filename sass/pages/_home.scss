@@ -1,0 +1,14 @@
+.nav--main {
+  grid-column: 8 / -1;
+}
+
+.content {
+  &--home {
+    grid-template-columns:
+      [full-start] 4rem repeat(14, [col-start] 1fr [col-end])
+      4rem [full-end];
+    grid-template-rows: repeat(2, 1fr);
+    // column-gap: 2rem;
+    justify-content: center;
+  }
+}

@@ -17,15 +17,28 @@
     background-image: url(../../assets/manila-folder-background-blurred.png);
     opacity: 0.45;
     clip-path: polygon(0 0, 43% 2%, 100% 13%, 100% 87%, 43% 98%, 0 100%);
+    cursor: pointer;
 
     writing-mode: vertical-rl;
     display: flex;
     align-items: center;
     justify-content: center;
 
-    &-link {
-      //   height: 85%;
-      text-align: center;
+    &:hover &-link {
+      background-color: $background-color-hover-tab-links;
+    }
+
+    &-link,
+    &-link:active,
+    &-link:visited {
+      // Align text inside tabs to center. Did this to make the background shadow on hover fill up more of the tab. This makes it look more similar to the game.
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 75%;
+      width: 100%;
+
+      // Font for text
       font-family: $font-secondary;
       font-size: 4rem;
       text-transform: uppercase;

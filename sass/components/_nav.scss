@@ -1,0 +1,35 @@
+.nav {
+  align-self: center;
+
+  &__list {
+    list-style-type: none;
+  }
+
+  &__item {
+    width: fit-content;
+    padding: 1rem;
+
+    span {
+      margin-right: 2.5rem;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__item:hover {
+    background-color: $background-color-hover-main-links;
+  }
+
+  &__link,
+  &__link:active,
+  &__link:visited {
+    font-size: 3rem;
+    font-weight: 300;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: transparent;
+    text-shadow: 0 0 2px #000;
+  }
+}

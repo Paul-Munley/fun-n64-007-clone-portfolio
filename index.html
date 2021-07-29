@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Odibee+Sans&family=Roboto:wght@300&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Odibee+Sans&family=Roboto:wght@300;400&display=swap"
       rel="stylesheet"
     />
 
@@ -22,20 +22,52 @@
     <div class="background">
       <!-- CODE THAT WAS USED TO MAKE PIXELATED BACKGROUND IMAGES KEEPING FOR POSSIBLE FUTURE USE. CONTAINER FOR ALL OF THE PAGE CONTENT WHEN MAKING THE BACKGROUND IMAGES -->
       <!-- <div class="pixels"></div> -->
-      <div class="content">
+      <div class="content content--home">
+        <div class="profile-img">
+          <img
+            src="/assets/paperclip-2.png"
+            alt="Paperclip"
+            class="paperclip"
+          />
+          <img
+            src="/assets/paul-updated-u.jpeg"
+            alt="Picture of Developer Paul"
+            class="portrait"
+          />
+        </div>
         <img
           src="/assets/logo-crest-2.png"
           alt="Main Menu Crest"
-          class="content__image"
+          class="crest"
         />
+        <nav class="nav nav--main">
+          <ul class="nav__list nav--main">
+            <li class="nav__item nav--main">
+              <span href="#" class="nav__link nav--main">1.</span>
+              <a href="#" class="nav__link nav--main">Home</a>
+            </li>
+            <li class="nav__item nav--main">
+              <span href="#" class="nav__link nav--main">2.</span>
+              <a href="#" class="nav__link nav--main">About</a>
+            </li>
+            <li class="nav__item nav--main">
+              <span href="#" class="nav__link nav--main">3.</span>
+              <a href="#" class="nav__link nav--main">Portolio</a>
+            </li>
+            <li class="nav__item nav--main">
+              <span href="#" class="nav__link nav--main"> 4.</span>
+              <a href="#" class="nav__link nav--main">Contact</a>
+            </li>
+          </ul>
+        </nav>
       </div>
       <nav class="tab-nav">
         <ul class="tab-nav__list">
-          <li class="tab-nav__item"></li>
-          <li class="tab-nav__item"></li>
-          <li class="tab-nav__item">
+          <btn class="tab-nav__item"></btn>
+          <btn class="tab-nav__item"></btn>
+          <btn class="tab-nav__item">
             <a class="tab-nav__item-link"> Previous </a>
-          </li>
+          </btn>
         </ul>
       </nav>
     </div>

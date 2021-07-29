@@ -1,0 +1,23 @@
+.profile-img {
+  position: relative;
+  grid-column: col-start 1 / col-end 5;
+  grid-row: 1 / 2;
+  margin-top: -1rem;
+}
+
+.paperclip {
+  position: absolute;
+  z-index: 3;
+  margin-top: -3.7rem;
+  margin-left: 2rem;
+  height: 8rem;
+  width: auto;
+}
+
+.portrait {
+  position: relative;
+  z-index: 2;
+  height: 45vh;
+  width: auto;
+  box-shadow: -0.4rem 1rem 0.4rem 0.2rem rgba(black, 0.8);
+}
