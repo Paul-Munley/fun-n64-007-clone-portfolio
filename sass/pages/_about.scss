@@ -3,7 +3,7 @@
 }
 
 .content {
-	&--home {
+	&--about {
 		grid-template-columns:
 			[full-start] 4rem repeat(14, [col-start] 1fr [col-end])
 			4rem [full-end];
@@ -12,10 +12,12 @@
 	}
 }
 
-.background-text--home {
-	overflow: hidden;
-	transform: rotate(-50deg);
-	margin-bottom: -1rem;
-	grid-column: 5 / -1;
-	z-index: 0;
+.background-text {
+	&--about {
+		overflow: hidden;
+		transform: rotate(-50deg);
+		margin-bottom: -1rem;
+		grid-column: 5 / -1;
+		z-index: 0;
+	}
 }

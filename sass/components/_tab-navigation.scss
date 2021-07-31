@@ -1,51 +1,56 @@
 .tab-nav {
-  background-color: transparent;
-  grid-column: nav-start / nav-end;
-  grid-row: 1 / -1;
-  padding: 2rem 0;
+	background-color: transparent;
+	grid-column: nav-start / nav-end;
+	grid-row: 1 / -1;
+	padding: 2rem 0;
 
-  // Container for the tabs
-  &__list {
-    height: 100%;
-    display: grid;
-    grid-template-rows: repeat(3, 1fr);
-    list-style: none;
-  }
+	// Container for the tabs
+	&__list {
+		height: 100%;
+		display: grid;
+		grid-template-rows: repeat(3, 1fr);
+		list-style: none;
+	}
 
-  // Individual tabs styling
-  &__item {
-    background-image: url(../../assets/manila-folder-background-blurred.png);
-    opacity: 0.45;
-    clip-path: polygon(0 0, 43% 2%, 100% 13%, 100% 87%, 43% 98%, 0 100%);
-    cursor: pointer;
+	// Individual tabs styling
+	&__item {
+		background-image: url(../../assets/manila-folder-background-blurred.png);
+		opacity: 0.45;
+		clip-path: polygon(0 0, 43% 2%, 100% 13%, 100% 87%, 43% 98%, 0 100%);
 
-    writing-mode: vertical-rl;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+		writing-mode: vertical-rl;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 
-    &:hover &-link {
-      background-color: $background-color-hover-tab-links;
-    }
+		&:hover {
+			cursor: pointer;
+		}
 
-    &-link,
-    &-link:active,
-    &-link:visited {
-      // Align text inside tabs to center. Did this to make the background shadow on hover fill up more of the tab. This makes it look more similar to the game.
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 75%;
-      width: 100%;
+		&:hover &-link {
+			background-color: $background-color-hover-tab-links;
+		}
 
-      // Font for text
-      font-family: $font-secondary;
-      font-size: 4rem;
-      text-transform: uppercase;
+		&-link,
+		&-link:active,
+		&-link:visited {
+			// Align text inside tabs to center. Did this to make the background shadow on hover fill up more of the tab. This makes it look more similar to the game.
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 75%;
+			width: 100%;
 
-      // Changing height of menu items and spacing between letters to look closer to game
-      transform: scaleX(0.5);
-      letter-spacing: 4px;
-    }
-  }
+			// Font and styling for text
+			font-family: $font-secondary;
+			font-size: 4rem;
+			text-transform: uppercase;
+			text-decoration: none;
+			color: black;
+
+			// Changing height of menu items and spacing between letters to look closer to game
+			transform: scaleX(0.5);
+			letter-spacing: 4px;
+		}
+	}
 }

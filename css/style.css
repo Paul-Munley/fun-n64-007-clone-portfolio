@@ -10,7 +10,10 @@ html {
   font-size: 62.5%; }
 
 body {
-  font-family: "Roboto", sans-serif; }
+  font-family: "Roboto", sans-serif;
+  cursor: none; }
+  body:hover {
+    cursor: none; }
 
 .background {
   background-image: url(../../assets/main-background-blurred.png);
@@ -20,6 +23,16 @@ body {
   padding: 8rem;
   display: grid;
   grid-template-columns: [container-start] repeat(6, 1fr) [container-end nav-start] 5rem [nav-end]; }
+
+.cursor {
+  z-index: 15;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  pointer-events: none; }
+  .cursor img {
+    height: 6rem;
+    width: 6rem; }
 
 /* 
 
@@ -36,10 +49,21 @@ WAS THE CODE USED TO RECREATE THE PIXELATED LOOK IN THE BACKGROUND AND MANILA FO
   float: left;
 }
  */
+.background-text {
+  position: absolute;
+  bottom: 0; }
+  .background-text__text {
+    text-transform: uppercase;
+    font-size: 13rem;
+    text-shadow: 2px 2px 3px rgba(207, 86, 84, 0.6);
+    color: transparent; }
+
 .content {
   background-image: url(../../assets/manila-folder-background-blurred.png);
   grid-column: container-start / container-end;
-  display: grid; }
+  display: grid;
+  position: relative;
+  overflow: hidden; }
 
 .crest {
   background-image: url(/assets/logo-crest-2.png);
@@ -50,31 +74,36 @@ WAS THE CODE USED TO RECREATE THE PIXELATED LOOK IN THE BACKGROUND AND MANILA FO
   width: auto; }
 
 .nav {
-  align-self: center; }
+  align-self: center;
+  z-index: 1; }
   .nav__list {
     list-style-type: none; }
-  .nav__item {
+  .nav__item, .nav__item:active, .nav__item:visited {
     width: fit-content;
-    padding: 1rem; }
-    .nav__item span {
-      margin-right: 2.5rem; }
-    .nav__item:not(:last-child) {
-      margin-bottom: 3rem; }
-  .nav__item:hover {
-    background-color: rgba(0, 0, 0, 0.2); }
-  .nav__link, .nav__link:active, .nav__link:visited {
+    padding: 0.5rem;
     font-size: 3rem;
     font-weight: 300;
     text-decoration: none;
     text-transform: uppercase;
     color: transparent;
     text-shadow: 0 0 2px #000; }
+    .nav__item span:not(:last-child), .nav__item:active span:not(:last-child), .nav__item:visited span:not(:last-child) {
+      margin-right: 2.5rem; }
+    .nav__item:not(:last-child), .nav__item:active:not(:last-child), .nav__item:visited:not(:last-child) {
+      margin-bottom: 3rem; }
+  .nav__item:hover {
+    background-color: rgba(0, 0, 0, 0.2); }
 
 .profile-img {
-  position: relative;
-  grid-column: col-start 1 / col-end 5;
-  grid-row: 1 / 2;
-  margin-top: -1rem; }
+  position: fixed;
+  margin-top: -1rem;
+  margin-left: 4rem; }
+
+.profile-img--right {
+  display: block;
+  position: fixed;
+  right: 0;
+  margin-right: calc( 4rem + 8rem + 5rem); }
 
 .paperclip {
   position: absolute;
@@ -105,11 +134,12 @@ WAS THE CODE USED TO RECREATE THE PIXELATED LOOK IN THE BACKGROUND AND MANILA FO
     background-image: url(../../assets/manila-folder-background-blurred.png);
     opacity: 0.45;
     clip-path: polygon(0 0, 43% 2%, 100% 13%, 100% 87%, 43% 98%, 0 100%);
-    cursor: pointer;
     writing-mode: vertical-rl;
     display: flex;
     align-items: center;
     justify-content: center; }
+    .tab-nav__item:hover {
+      cursor: pointer; }
     .tab-nav__item:hover .tab-nav__item-link {
       background-color: rgba(0, 0, 0, 0.3); }
     .tab-nav__item-link, .tab-nav__item-link:active, .tab-nav__item-link:visited {
@@ -121,8 +151,25 @@ WAS THE CODE USED TO RECREATE THE PIXELATED LOOK IN THE BACKGROUND AND MANILA FO
       font-family: "Odibee Sans", "Roboto", sans-serif;
       font-size: 4rem;
       text-transform: uppercase;
+      text-decoration: none;
+      color: black;
       transform: scaleX(0.5);
       letter-spacing: 4px; }
+
+.nav--main {
+  grid-column: 8 / -1; }
+
+.content--about {
+  grid-template-columns: [full-start] 4rem repeat(14, [col-start] 1fr [col-end]) 4rem [full-end];
+  grid-template-rows: repeat(2, 1fr);
+  justify-content: center; }
+
+.background-text--about {
+  overflow: hidden;
+  transform: rotate(-50deg);
+  margin-bottom: -1rem;
+  grid-column: 5 / -1;
+  z-index: 0; }
 
 .nav--main {
   grid-column: 8 / -1; }
@@ -131,3 +178,10 @@ WAS THE CODE USED TO RECREATE THE PIXELATED LOOK IN THE BACKGROUND AND MANILA FO
   grid-template-columns: [full-start] 4rem repeat(14, [col-start] 1fr [col-end]) 4rem [full-end];
   grid-template-rows: repeat(2, 1fr);
   justify-content: center; }
+
+.background-text--home {
+  overflow: hidden;
+  transform: rotate(-50deg);
+  margin-bottom: -1rem;
+  grid-column: 5 / -1;
+  z-index: 0; }

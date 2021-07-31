@@ -3,6 +3,7 @@
 @import "base/typography";
 
 // COMPONENTS
+@import "components/background-text";
 @import "components/content";
 @import "components/crest";
 @import "components/nav";
@@ -10,4 +11,5 @@
 @import "components/tab-navigation";
 
 // PAGES
+@import "pages/about";
 @import "pages/home";

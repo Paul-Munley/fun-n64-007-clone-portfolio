@@ -9,16 +9,16 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
-			href="https://fonts.googleapis.com/css2?family=Odibee+Sans&family=Roboto:wght@300;400&display=swap"
+			href="https://fonts.googleapis.com/css2?family=Odibee+Sans&family=Roboto:wght@300;400&family=Playfair+Display&display=swap"
 			rel="stylesheet"
 		/>
 
 		<!-- CSS -->
-		<link href="css/style.css" rel="stylesheet" />
+		<link href="../css/style.css" rel="stylesheet" />
 
 		<!-- JS -->
-		<script defer src="js/mouseMove.js"></script>
-		<script defer src="js/pageRouting.js"></script>
+		<script defer src="../js/mouseMove.js"></script>
+		<script defer src="../js/pageRouting.js"></script>
 
 		<title>Paul Munley Developer</title>
 	</head>
@@ -26,7 +26,7 @@
 		<div class="cursor">
 			<img
 				onerror="cursorErrorHandler()"
-				src="assets/imgbin_reticle-png.png"
+				src="../assets/imgbin_reticle-png.png"
 				alt="Cursor"
 				class="cursor__img"
 			/>
@@ -34,27 +34,25 @@
 		<div class="background">
 			<!-- CODE THAT WAS USED TO MAKE PIXELATED BACKGROUND IMAGES KEEPING FOR POSSIBLE FUTURE USE. CONTAINER FOR ALL OF THE PAGE CONTENT WHEN MAKING THE BACKGROUND IMAGES -->
 			<!-- <div class="pixels"></div> -->
-			<div class="content content--home">
-				<div class="profile-img">
+			<div class="content content--about">
+				<div class="profile-img profile-img--right">
 					<img
-						src="/assets/paperclip-2.png"
+						src="../assets/paperclip-2.png"
 						alt="Paperclip"
 						class="paperclip"
 					/>
 					<img
-						src="/assets/paul-updated-u.jpeg"
+						src="../assets/about-me-picture-bw-u-final.jpeg"
 						alt="Picture of Developer Paul"
 						class="portrait"
 					/>
 				</div>
-				<img
-					src="/assets/logo-crest-2.png"
-					alt="Main Menu Crest"
-					class="crest"
-				/>
 				<nav class="nav nav--main">
 					<ul class="nav__list nav--main">
-						<li class="nav__item nav--main">
+						<li
+							class="nav__item nav--main"
+							onclick="location.href='../index.html'"
+						>
 							<span class="nav__text nav--main">1.</span>
 							<span class="nav__text nav--main">Home</span>
 						</li>
@@ -65,31 +63,29 @@
 							<span class="nav__text nav--main">2.</span>
 							<span class="nav__text nav--main">About</span>
 						</li>
-						<li
-							class="nav__item nav--main"
-							onclick="location.href='/html/about.html'"
-						>
+						<li class="nav__item nav--main" onclick="location.href='#'">
 							<span class="nav__text nav--main">3.</span>
 							<span class="nav__text nav--main">Portolio</span>
 						</li>
-						<li
-							class="nav__item nav--main"
-							onclick="location.href='/html/about.html'"
-						>
+						<li class="nav__item nav--main" onclick="location.href='#'">
 							<span class="nav__text nav--main"> 4.</span>
 							<span class="nav__text nav--main">Contact</span>
 						</li>
 					</ul>
 				</nav>
-				<div class="background-text background-text--home">
+				<div class="background-text background-text--about">
 					<p class="background-text__text">For your</p>
 					<p class="background-text__text">view only</p>
 				</div>
 			</div>
 			<nav class="tab-nav">
 				<ul class="tab-nav__list">
-					<btn class="tab-nav__item"></btn>
-					<btn class="tab-nav__item"></btn>
+					<btn class="tab-nav__item">
+						<a href="/index.html" class="tab-nav__item-link"> Home </a>
+					</btn>
+					<btn class="tab-nav__item">
+						<a href="#" class="tab-nav__item-link"> Portolio </a>
+					</btn>
 					<btn class="tab-nav__item">
 						<a id="back-link" class="tab-nav__item-link"> Previous </a>
 					</btn>
