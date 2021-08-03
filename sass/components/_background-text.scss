@@ -3,9 +3,10 @@
 	bottom: 0;
 
 	&__text {
+		position: relative;
 		text-transform: uppercase;
 		font-size: 13rem;
-		text-shadow: 2px 2px 3px rgba(207, 86, 84, 0.6);
+		text-shadow: $red-background-text;
 		color: transparent;
 	}
 }

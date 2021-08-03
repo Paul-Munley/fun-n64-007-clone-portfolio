@@ -49,10 +49,23 @@ WAS THE CODE USED TO RECREATE THE PIXELATED LOOK IN THE BACKGROUND AND MANILA FO
   float: left;
 }
  */
+.heading {
+  font-family: "Playfair Display SC", serif;
+  font-size: 8rem;
+  font-weight: 400;
+  text-transform: uppercase; }
+
+.heading-secondary {
+  font-family: "Roboto", sans-serif;
+  font-size: 4rem;
+  font-weight: 400;
+  text-transform: uppercase; }
+
 .background-text {
   position: absolute;
   bottom: 0; }
   .background-text__text {
+    position: relative;
     text-transform: uppercase;
     font-size: 13rem;
     text-shadow: 2px 2px 3px rgba(207, 86, 84, 0.6);
@@ -97,7 +110,8 @@ WAS THE CODE USED TO RECREATE THE PIXELATED LOOK IN THE BACKGROUND AND MANILA FO
 .profile-img {
   position: fixed;
   margin-top: -1rem;
-  margin-left: 4rem; }
+  margin-left: 4rem;
+  z-index: 3; }
 
 .profile-img--right {
   display: block;
@@ -107,7 +121,7 @@ WAS THE CODE USED TO RECREATE THE PIXELATED LOOK IN THE BACKGROUND AND MANILA FO
 
 .paperclip {
   position: absolute;
-  z-index: 3;
+  z-index: 4;
   margin-top: -3.7rem;
   margin-left: 2rem;
   height: 8rem;
@@ -115,7 +129,7 @@ WAS THE CODE USED TO RECREATE THE PIXELATED LOOK IN THE BACKGROUND AND MANILA FO
 
 .portrait {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   height: 45vh;
   width: auto;
   box-shadow: -0.4rem 1rem 0.4rem 0.2rem rgba(0, 0, 0, 0.8); }
@@ -164,12 +178,36 @@ WAS THE CODE USED TO RECREATE THE PIXELATED LOOK IN THE BACKGROUND AND MANILA FO
   grid-template-rows: repeat(2, 1fr);
   justify-content: center; }
 
+.portrait--right {
+  box-shadow: none; }
+
+.summary {
+  grid-column: col-start 1 / col-end 13;
+  z-index: 15;
+  color: transparent;
+  text-shadow: 0 0 2px #000; }
+  .summary__heading-container {
+    height: fit-content;
+    margin: 3rem 0; }
+  .summary__heading {
+    transform: scale(0.93, 1.3); }
+  .summary__list {
+    list-style-type: none; }
+  .summary__item:not(:last-child) {
+    margin-bottom: 0.5rem; }
+  .summary__text {
+    font-size: 4rem; }
+
 .background-text--about {
   overflow: hidden;
   transform: rotate(-50deg);
   margin-bottom: -1rem;
   grid-column: 5 / -1;
+  text-shadow: 2px 2px 3px rgba(207, 86, 84, 0.4);
+  position: absolute;
   z-index: 0; }
+  .background-text--about p {
+    text-shadow: 2px 2px 3px rgba(207, 86, 84, 0.4); }
 
 .nav--main {
   grid-column: 8 / -1; }

@@ -16,8 +16,7 @@
 		font-weight: 300;
 		text-decoration: none;
 		text-transform: uppercase;
-		color: transparent;
-		text-shadow: 0 0 2px #000;
+		@include fuzzy-font;
 
 		span {
 			&:not(:last-child) {

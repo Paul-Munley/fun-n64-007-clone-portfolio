@@ -4,6 +4,7 @@
 	// grid-row: 1 / 2;
 	margin-top: -1rem;
 	margin-left: $content-full-bleed-col-w;
+	z-index: 3;
 }
 
 .profile-img--right {
@@ -17,7 +18,7 @@
 
 .paperclip {
 	position: absolute;
-	z-index: 3;
+	z-index: 4;
 	margin-top: -3.7rem;
 	margin-left: 2rem;
 	height: 8rem;
@@ -26,7 +27,7 @@
 
 .portrait {
 	position: relative;
-	z-index: 2;
+	z-index: 3;
 	height: 45vh;
 	width: auto;
 	box-shadow: -0.4rem 1rem 0.4rem 0.2rem rgba(black, 0.8);
