@@ -1,0 +1,148 @@
+.content {
+	&--portfolio {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-items: center;
+		justify-content: center;
+		align-items: center;
+		font-family: $font-primary;
+	}
+
+	&__heading--portfolio {
+		@include fuzzy-font;
+		font-size: 4rem;
+		flex: 0 0 fit-content;
+	}
+
+	&__project-name--portfolio {
+		@include fuzzy-font;
+		font-size: 4rem;
+		flex: 0 0 fit-content;
+	}
+
+	// LEFT & RIGHT ICONS FOR PROJECT NAME
+	// AND DETAILS SECTION
+	&__icon {
+		font-size: 8rem;
+		// color: #282828;
+		@include fuzzy-font;
+		// opacity: ;
+
+		&--right {
+			// transform: translateY(-50%);
+		}
+
+		&--left {
+			// transform: translateY(-50%);
+		}
+	}
+
+	&__project {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		&-name {
+			font-size: 4rem;
+		}
+	}
+}
+
+.slider {
+	padding: 1rem;
+	flex: 0 0 80%;
+	// display: grid;
+	// grid-template-rows: 6rem 1fr 6rem;
+	// width: 100%;
+	justify-items: center;
+	align-items: center;
+
+	&__list {
+		position: relative;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 4rem;
+		align-items: center;
+		width: 100%;
+		height: 100%;
+	}
+
+	&__item {
+		// position: absolute;
+		transition: all 0.2s;
+
+		width: 500px;
+		height: calc(50rem / (16 / 9));
+
+		// TODO: WILL MOST LIKELY NEED TO CHANGE THESE
+		// ACTIVE AND INACTIVE STATUS IN EACH INDIVIDUAL
+		// PROJECT AS THEY WILL ALL HAVE THEIR OWN
+		// INDIVIDUAL BACKGROUND IMAGES.
+		&.inactive-left {
+			background-image: linear-gradient(
+					90deg,
+					rgba(white, 1) 50%,
+					rgba(white, 0.75) 62.5%,
+					rgba(white, 0.5) 75%,
+					rgba(white, 0.25) 87.5%,
+					rgba(white, 0) 100%
+				),
+				url(../../assets/crypto-project-bw-wide.jpeg);
+			filter: opacity(70%);
+			background-size: cover;
+		}
+
+		&.inactive-right {
+			background-image: linear-gradient(
+					90deg,
+					rgba(white, 0) 0%,
+					rgba(white, 0.25) 12.5%,
+					rgba(white, 0.5) 25%,
+					rgba(white, 0.75) 37.5%,
+					rgba(white, 1) 50%
+				),
+				url(../../assets/crypto-project-bw-wide.jpeg);
+			filter: opacity(70%);
+			background-size: cover;
+		}
+
+		&.active {
+			background-image: url(../../assets/crypto-project-bw-wide.jpeg);
+			background-size: cover;
+		}
+
+		&--1 {
+			// &::before {
+			// 	content: "";
+			// 	display: block;
+			// 	position: absolute;
+			// 	left: 0;
+			// 	top: 0;
+			// 	width: 100%;
+			// 	height: 100%;
+
+			// 	background-image: ;
+			// }
+			// transform: translate(-150%, -50%);
+		}
+
+		&--2 {
+			// background-image: linear-gradient(95deg, rgba(white, 1), rgba(white, 0.4)),
+			// 	url(../../assets/crypto-project-bw-wide.jpeg);
+			// filter: opacity(60%);
+			// background-size: cover;
+		}
+
+		&--3 {
+			// background-image: url(../../assets/crypto-project-bw-wide.jpeg);
+			// background-size: cover;
+		}
+	}
+
+	&__img {
+		background-image: url(../../assets/crypto-project-bw-wide.jpeg);
+		background-size: cover;
+	}
+}

@@ -1,15 +1,6 @@
-.nav--main {
-	grid-column: 8 / -1;
-}
-
 .content {
-	&--about {
-		grid-template-columns:
-			[full-start] 4rem repeat(14, [col-start] 1fr [col-end])
-			4rem [full-end];
-		grid-template-rows: repeat(2, 1fr);
-		justify-content: center;
-	}
+	// &--about {
+	// }
 }
 
 .portrait--right {
@@ -17,8 +8,8 @@
 }
 
 .summary {
-	grid-column: col-start 1 / col-end 13;
 	z-index: 15;
+	margin-top: 7vh;
 
 	// Styling for all text
 	@include fuzzy-font;
@@ -26,6 +17,7 @@
 	&__heading-container {
 		height: fit-content;
 		margin: 3rem 0;
+		margin-left: 2rem;
 	}
 
 	&__heading {
@@ -34,6 +26,7 @@
 
 	&__list {
 		list-style-type: none;
+		margin-left: 2rem;
 	}
 
 	&__item:not(:last-child) {
@@ -48,15 +41,15 @@
 .background-text {
 	&--about {
 		overflow: hidden;
-		transform: rotate(-50deg);
-		margin-bottom: -1rem;
-		grid-column: 5 / -1;
-		text-shadow: $red-background-text-light;
+		transform: rotate(35deg);
+		text-shadow: $red-background-text;
 		position: absolute;
 		z-index: 0;
+		left: 15%;
+		bottom: 12%;
 
 		p {
-			text-shadow: $red-background-text-light;
+			text-shadow: $red-background-text;
 		}
 	}
 }
