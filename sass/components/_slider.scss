@@ -25,17 +25,7 @@
 	// AND DETAILS SECTION
 	&__icon {
 		font-size: 8rem;
-		// color: #282828;
 		@include fuzzy-font;
-		// opacity: ;
-
-		&--right {
-			// transform: translateY(-50%);
-		}
-
-		&--left {
-			// transform: translateY(-50%);
-		}
 	}
 
 	&__project {
@@ -51,98 +41,110 @@
 }
 
 .slider {
-	padding: 1rem;
 	flex: 0 0 80%;
-	// display: grid;
-	// grid-template-rows: 6rem 1fr 6rem;
-	// width: 100%;
-	justify-items: center;
+	overflow: visible;
+	width: 100%;
+	margin: 0 auto;
+	position: relative;
+	display: flex;
 	align-items: center;
 
-	&__list {
-		position: relative;
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		gap: 4rem;
-		align-items: center;
+	&__container {
+		display: flex;
+		justify-content: center;
 		width: 100%;
-		height: 100%;
+		transition: all 0.2s;
 	}
 
 	&__item {
-		// position: absolute;
-		transition: all 0.2s;
+		position: relative;
+		padding: 0 2rem;
+		flex: 1 0 auto;
 
-		width: 500px;
-		height: calc(50rem / (16 / 9));
+		// PORTFOLIO IMAGE DIMENSIONS
+		width: $portfolio-img-width;
+		// aspect ratio calc but added with subtracting the 2 rem left and right padding
+		height: calc(
+			(#{$portfolio-img-width} - #{$portfolio-img-padding}) / (16 / 9)
+		);
 
-		// TODO: WILL MOST LIKELY NEED TO CHANGE THESE
-		// ACTIVE AND INACTIVE STATUS IN EACH INDIVIDUAL
-		// PROJECT AS THEY WILL ALL HAVE THEIR OWN
-		// INDIVIDUAL BACKGROUND IMAGES.
+		&.active {
+			& > .img-overlay {
+				display: none;
+			}
+		}
+
 		&.inactive-left {
-			background-image: linear-gradient(
+			opacity: 70%;
+
+			& > .img-overlay {
+				background-image: linear-gradient(
 					90deg,
 					rgba(white, 1) 50%,
 					rgba(white, 0.75) 62.5%,
 					rgba(white, 0.5) 75%,
 					rgba(white, 0.25) 87.5%,
 					rgba(white, 0) 100%
-				),
-				url(../../assets/crypto-project-bw-wide.jpeg);
-			filter: opacity(70%);
-			background-size: cover;
+				);
+			}
 		}
 
 		&.inactive-right {
-			background-image: linear-gradient(
+			opacity: 70%;
+
+			& > .img-overlay {
+				background-image: linear-gradient(
 					90deg,
 					rgba(white, 0) 0%,
 					rgba(white, 0.25) 12.5%,
 					rgba(white, 0.5) 25%,
 					rgba(white, 0.75) 37.5%,
 					rgba(white, 1) 50%
-				),
-				url(../../assets/crypto-project-bw-wide.jpeg);
-			filter: opacity(70%);
-			background-size: cover;
-		}
-
-		&.active {
-			background-image: url(../../assets/crypto-project-bw-wide.jpeg);
-			background-size: cover;
-		}
-
-		&--1 {
-			// &::before {
-			// 	content: "";
-			// 	display: block;
-			// 	position: absolute;
-			// 	left: 0;
-			// 	top: 0;
-			// 	width: 100%;
-			// 	height: 100%;
-
-			// 	background-image: ;
-			// }
-			// transform: translate(-150%, -50%);
-		}
-
-		&--2 {
-			// background-image: linear-gradient(95deg, rgba(white, 1), rgba(white, 0.4)),
-			// 	url(../../assets/crypto-project-bw-wide.jpeg);
-			// filter: opacity(60%);
-			// background-size: cover;
-		}
-
-		&--3 {
-			// background-image: url(../../assets/crypto-project-bw-wide.jpeg);
-			// background-size: cover;
+				);
+			}
 		}
 	}
 
 	&__img {
-		background-image: url(../../assets/crypto-project-bw-wide.jpeg);
-		background-size: cover;
+		z-index: 0;
+		position: relative;
+		max-width: 100%;
+		height: auto;
 	}
+
+	&__project-details {
+		display: flex;
+		align-items: center;
+		justify-content: space-evenly;
+		width: #{$portfolio-img-width - $portfolio-img-padding};
+		height: 10rem;
+		position: absolute;
+		z-index: 2;
+		bottom: 7%;
+		left: 50%;
+		transform: translateX(-50%);
+
+		i {
+			@include fuzzy-font;
+			font-size: 6rem;
+		}
+
+		&.right-active {
+			transform: translateX(calc(-50% - 1rem));
+		}
+
+		&.left-active {
+			transform: translateX(calc(-50% + 1rem));
+		}
+	}
+}
+
+.img-overlay {
+	z-index: 3;
+	position: absolute;
+	left: 2rem;
+	height: 100%;
+	width: calc(
+		100% - #{$portfolio-img-padding}
+	); // minus 2rem padding left and right
 }

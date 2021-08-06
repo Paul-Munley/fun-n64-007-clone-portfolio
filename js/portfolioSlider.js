@@ -1,48 +1,108 @@
-// SELECTORS
-const [item1, item2, item3] = document.querySelectorAll(".slider__item");
-console.log(item1);
-console.log(item2);
-console.log(item3);
+"use strict";
+
+const sliderContainer = document.querySelector(".slider__container");
+const slides = document.querySelectorAll(".slider__item");
+const projectName = document.querySelector(".content__project-name");
+const projectDetails = document.querySelector(".slider__project-details");
 const leftArrow = document.querySelector(".content__icon--left");
 const rightArrow = document.querySelector(".content__icon--right");
 
-// CURRENT ACTIVE SLIDE
-let currentActiveSlide = 1;
+let firstClick = true;
+let currentSlide = 2;
 
-// EVENT HANDLERS
-const leftArrowHandler = () => {
-	// Gaurd clause
-	if (currentActiveSlide === slideItems.length - 1) return;
+const setSlideStyling = () => {
+	slides.forEach((slide, i) => {
+		const slideIsLeft = i + 1 < currentSlide;
+		const slideIsActive = currentSlide === i + 1;
+		const slideIsRight = i + 1 > currentSlide;
 
-	currentActiveSlide += 1;
+		if (slideIsActive) {
+			// Active Slide
+			slide.classList.add("active");
+			slide.classList.remove("inactive-right");
+			slide.classList.remove("inactive-left");
+		} else if (slideIsLeft) {
+			// Left Slide
+			slide.classList.remove("active");
+			slide.classList.add("inactive-left");
+		} else if (slideIsRight) {
+			// Right Slide
+			slide.classList.remove("active");
+			slide.classList.add("inactive-right");
+		}
 
-	slideItems.forEach(item => {
-		let currentTrans = item.style.transform;
-
-		const currentTransValue = +currentTrans.replace(/[^\d.-]/g, "");
-
-		// item.style.transform = `translateX(${currentTransValue - 100}%)`;
+		// NOTE: Will work for time being with just 3 projects but will change if more are added as it is dependent on the specific numnber of portfolio projects being 3.
+		// BUG NEED TO FIX LOGIC ON THIS.. NOT WORKING TO ADUJUST SPACING IN LEFT AND RIGHT STATES.
+		if (i === 0 && i + 1 === currentSlide)
+			projectDetails.classList.toggle("left-active");
+		if (i === 2 && i + 1 === currentSlide)
+			projectDetails.classList.toggle("right-active");
 	});
+};
+
+const setActiveSlideDetails = () => {
+	if (currentSlide === 1)
+		projectName.innerHTML = "Cryptocurrency Price Project";
+	if (currentSlide === 2) projectName.innerHTML = "Shopping Cart Page";
+	if (currentSlide === 3) projectName.innerHTML = "My Pooch";
 };
 
 const rightArrowHandler = () => {
-	// Gaurd clause
-	if (currentActiveSlide === 0) return;
+	// Gaurd Clause for when we are on last slides
+	if (currentSlide === slides.length) return;
 
-	currentActiveSlide -= 1;
+	currentSlide++;
+	// console.log(currentSlide, slides.length);
 
-	slideItems.forEach(item => {
-		let currentTrans = item.style.transform;
+	const matrix = window
+		.getComputedStyle(sliderContainer)
+		.getPropertyValue("transform");
 
-		const currentTransValue = +currentTrans.replace(/[^\d.-]/g, "");
+	const currentTransValue = matrix.replace(/[^\d. -]/g, "");
+	const curTransXConverted = +currentTransValue.split(" ")[4];
+	if (firstClick || curTransXConverted === 0) {
+		sliderContainer.style.transform = "translateX(-51rem)";
+	} else {
+		sliderContainer.style.transform = "translateX(0)";
+	}
 
-		item.style.transform = `translateX(${currentTransValue + 100}%)`;
-	});
+	// Change active and inactive slide images styling
+	setSlideStyling();
+
+	// Change active slide details
+	setActiveSlideDetails();
+
+	firstClick = false;
 };
 
-// EVENT LISTENERS
+const leftArrowHandler = () => {
+	// Gaurd Clause for when we are on last slides
+	if (currentSlide === 1) return;
+
+	currentSlide--;
+
+	const matrix = window
+		.getComputedStyle(sliderContainer)
+		.getPropertyValue("transform");
+
+	const currentTransValue = matrix.replace(/[^\d. -]/g, "");
+	const curTransXConverted = +currentTransValue.split(" ")[4];
+
+	if (firstClick || curTransXConverted === 0) {
+		sliderContainer.style.transform = "translateX(51rem)";
+	} else {
+		sliderContainer.style.transform = "translateX(0)";
+	}
+
+	// Change active and inactive slide images styling
+	setSlideStyling();
+
+	// Change active slide details
+	setActiveSlideDetails();
+
+	firstClick = false;
+};
+
 leftArrow.addEventListener("click", leftArrowHandler);
 rightArrow.addEventListener("click", rightArrowHandler);
-
-//////////////////////////////////////////////////////////
-// NOT ACTIVE SLIDE STYLING
+window.addEventListener("load", setActiveSlideDetails);
