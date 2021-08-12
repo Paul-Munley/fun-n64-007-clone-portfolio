@@ -34,67 +34,69 @@
 		<div class="background">
 			<!-- CODE THAT WAS USED TO MAKE PIXELATED BACKGROUND IMAGES KEEPING FOR POSSIBLE FUTURE USE. CONTAINER FOR ALL OF THE PAGE CONTENT WHEN MAKING THE BACKGROUND IMAGES -->
 			<!-- <div class="pixels"></div> -->
-			<div class="content content--home">
-				<div class="profile-img">
+			<div class="container">
+				<div class="content content--home">
+					<div class="profile-img">
+						<img
+							src="/assets/paperclip-2.png"
+							alt="Paperclip"
+							class="paperclip"
+						/>
+						<img
+							src="/assets/paul-updated-u.jpeg"
+							alt="Picture of Developer Paul"
+							class="portrait"
+						/>
+					</div>
 					<img
-						src="/assets/paperclip-2.png"
-						alt="Paperclip"
-						class="paperclip"
+						src="/assets/logo-crest-2.png"
+						alt="Main Menu Crest"
+						class="crest"
 					/>
-					<img
-						src="/assets/paul-updated-u.jpeg"
-						alt="Picture of Developer Paul"
-						class="portrait"
-					/>
+					<nav class="nav nav--main">
+						<ul class="nav__list nav--main">
+							<li class="nav__item nav--main">
+								<span class="nav__text nav--main">1.</span>
+								<span class="nav__text nav--main">Home</span>
+							</li>
+							<li
+								class="nav__item nav--main"
+								onclick="location.href='/html/about.html'"
+							>
+								<span class="nav__text nav--main">2.</span>
+								<span class="nav__text nav--main">About</span>
+							</li>
+							<li
+								class="nav__item nav--main"
+								onclick="location.href='/html/portfolio.html'"
+							>
+								<span class="nav__text nav--main">3.</span>
+								<span class="nav__text nav--main">Portolio</span>
+							</li>
+							<li
+								class="nav__item nav--main"
+								onclick="location.href='/html/contact.html'"
+							>
+								<span class="nav__text nav--main"> 4.</span>
+								<span class="nav__text nav--main">Contact</span>
+							</li>
+						</ul>
+					</nav>
+					<div class="background-text background-text--home">
+						<p class="background-text__text">For your</p>
+						<p class="background-text__text">view only</p>
+					</div>
 				</div>
-				<img
-					src="/assets/logo-crest-2.png"
-					alt="Main Menu Crest"
-					class="crest"
-				/>
-				<nav class="nav nav--main">
-					<ul class="nav__list nav--main">
-						<li class="nav__item nav--main">
-							<span class="nav__text nav--main">1.</span>
-							<span class="nav__text nav--main">Home</span>
-						</li>
-						<li
-							class="nav__item nav--main"
-							onclick="location.href='/html/about.html'"
-						>
-							<span class="nav__text nav--main">2.</span>
-							<span class="nav__text nav--main">About</span>
-						</li>
-						<li
-							class="nav__item nav--main"
-							onclick="location.href='/html/portfolio.html'"
-						>
-							<span class="nav__text nav--main">3.</span>
-							<span class="nav__text nav--main">Portolio</span>
-						</li>
-						<li
-							class="nav__item nav--main"
-							onclick="location.href='/html/about.html'"
-						>
-							<span class="nav__text nav--main"> 4.</span>
-							<span class="nav__text nav--main">Contact</span>
-						</li>
+				<nav class="tab-nav">
+					<ul class="tab-nav__list">
+						<a class="tab-nav__item"></a>
+						<a class="tab-nav__item"></a>
+						<a id="back-link" class="tab-nav__item">
+							<p class="tab-nav__item-text">Previous</p>
+						</a>
 					</ul>
 				</nav>
-				<div class="background-text background-text--home">
-					<p class="background-text__text">For your</p>
-					<p class="background-text__text">view only</p>
-				</div>
 			</div>
-			<nav class="tab-nav">
-				<ul class="tab-nav__list">
-					<btn class="tab-nav__item"></btn>
-					<btn class="tab-nav__item"></btn>
-					<btn class="tab-nav__item">
-						<a id="back-link" class="tab-nav__item-link"> Previous </a>
-					</btn>
-				</ul>
-			</nav>
 		</div>
 	</body>
 </html>

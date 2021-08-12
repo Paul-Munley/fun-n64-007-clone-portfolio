@@ -8,6 +8,12 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%; }
+  @media only screen and (max-width: 71.25em) {
+    html {
+      font-size: 56.25%; } }
+  @media only screen and (max-width: 59.5em) {
+    html {
+      font-size: 50%; } }
 
 body {
   font-family: "Roboto", sans-serif;
@@ -20,9 +26,15 @@ body {
   background-size: cover;
   height: 100vh;
   width: 100vw;
-  padding: 8rem;
+  padding: 8rem 4rem; }
+
+.container {
+  grid-column: container-start / container-end;
+  height: 880px;
+  max-width: 1102px;
+  margin: 0 auto;
   display: grid;
-  grid-template-columns: [container-start] repeat(6, 1fr) [container-end nav-start] 5rem [nav-end]; }
+  grid-template-columns: [container-start] 1fr [container-end nav-start] 5rem [nav-end]; }
 
 .cursor {
   z-index: 15;
@@ -85,6 +97,50 @@ WAS THE CODE USED TO RECREATE THE PIXELATED LOOK IN THE BACKGROUND AND MANILA FO
   display: inline-block;
   height: 32rem;
   width: auto; }
+  @media only screen and (max-width: 66.25em) {
+    .crest {
+      grid-column: col-start 9 / full-end; } }
+
+.form {
+  padding: 1rem;
+  flex: 0 0 50%; }
+  .form__heading {
+    font-size: 5rem;
+    margin-bottom: 4rem;
+    color: transparent;
+    text-shadow: 0 0 2px #000; }
+  .form__label {
+    width: 3rem; }
+  .form__group {
+    width: 100%; }
+    .form__group > input {
+      cursor: none; }
+    .form__group:not(:last-child) {
+      margin-bottom: 1rem; }
+  .form__input {
+    background-image: url(/assets/paper-2.jpg);
+    background-size: cover;
+    border-radius: 3px;
+    border: none;
+    padding: 4rem 1rem 2.5rem 7.75rem;
+    width: 100%;
+    position: relative;
+    display: flex;
+    font-size: 2.25rem;
+    color: transparent;
+    text-shadow: 0 0 2px #000;
+    transition: all 0.5s;
+    box-shadow: none; }
+    .form__input:focus {
+      outline: none;
+      box-shadow: 0 0.2rem 0.75rem black;
+      transition: all 0.5s;
+      color: transparent;
+      text-shadow: none; }
+      .form__input:focus::placeholder {
+        transition: color 0.5s;
+        color: transparent;
+        text-shadow: none; }
 
 .nav {
   align-self: center;
@@ -114,10 +170,12 @@ WAS THE CODE USED TO RECREATE THE PIXELATED LOOK IN THE BACKGROUND AND MANILA FO
   z-index: 3; }
 
 .profile-img--right {
-  display: block;
   position: fixed;
-  right: 0;
-  margin-right: calc( 4rem + 8rem + 5rem); }
+  left: calc(55% - 4rem);
+  margin-right: auto; }
+  @media only screen and (max-width: 106.25em) {
+    .profile-img--right {
+      left: 55%; } }
 
 .paperclip {
   position: absolute;
@@ -130,7 +188,7 @@ WAS THE CODE USED TO RECREATE THE PIXELATED LOOK IN THE BACKGROUND AND MANILA FO
 .portrait {
   position: relative;
   z-index: 3;
-  max-height: 45vh;
+  max-height: 45rem;
   width: auto;
   box-shadow: -0.4rem 1rem 0.4rem 0.2rem rgba(0, 0, 0, 0.8); }
 
@@ -212,11 +270,19 @@ WAS THE CODE USED TO RECREATE THE PIXELATED LOOK IN THE BACKGROUND AND MANILA FO
     z-index: 2;
     bottom: 7%;
     left: 50%;
-    transform: translateX(-50%); }
+    transform: translateX(-50%);
+    transition: all 0.2s; }
     .slider__project-details i {
+      position: relative;
       color: transparent;
       text-shadow: 0 0 2px #000;
       font-size: 6rem; }
+    .slider__project-details a {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 6rem;
+      width: 5.5rem; }
     .slider__project-details.right-active {
       transform: translateX(calc(-50% - 1rem)); }
     .slider__project-details.left-active {
@@ -246,12 +312,13 @@ WAS THE CODE USED TO RECREATE THE PIXELATED LOOK IN THE BACKGROUND AND MANILA FO
     writing-mode: vertical-rl;
     display: flex;
     align-items: center;
-    justify-content: center; }
+    justify-content: center;
+    text-decoration: none; }
     .tab-nav__item:hover {
       cursor: pointer; }
-    .tab-nav__item:hover .tab-nav__item-link {
+    .tab-nav__item:hover .tab-nav__item-text {
       background-color: rgba(0, 0, 0, 0.3); }
-    .tab-nav__item-link, .tab-nav__item-link:active, .tab-nav__item-link:visited {
+    .tab-nav__item-text {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -297,6 +364,11 @@ WAS THE CODE USED TO RECREATE THE PIXELATED LOOK IN THE BACKGROUND AND MANILA FO
   bottom: 12%; }
   .background-text--about p {
     text-shadow: 2px 2px 3px rgba(207, 86, 84, 0.4); }
+
+.content--contact {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
 
 .nav--main {
   grid-column: 8 / -1; }

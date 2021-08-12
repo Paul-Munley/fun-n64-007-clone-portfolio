@@ -9,6 +9,14 @@
 html {
 	box-sizing: border-box;
 	font-size: 62.5%; // 10px base
+
+	@include respond(large) {
+		font-size: 56.25%; // 9px base
+	}
+
+	@include respond(small) {
+		font-size: 50%; // 8px base
+	}
 }
 
 body {
@@ -26,10 +34,25 @@ body {
 
 	height: 100vh;
 	width: 100vw;
-	padding: $backgound-padding;
+	padding: $backgound-padding 4rem;
+
+	// display: grid;
+	// justify-items: center;
+	// grid-template-columns: [container-start] repeat(6, 1fr) [container-end nav-start] $tab-nav-width [nav-end];
+
+	// display: grid;
+	// // justify-items: center;
+	// grid-template-columns: [background-start full-start] 1fr [container-start] 100.2rem [container-end] 1fr [full-end];
+}
+
+.container {
+	grid-column: container-start / container-end;
+	height: 880px;
+	max-width: 1102px;
+	margin: 0 auto;
 
 	display: grid;
-	grid-template-columns: [container-start] repeat(6, 1fr) [container-end nav-start] $tab-nav-width [nav-end];
+	grid-template-columns: [container-start] 1fr [container-end nav-start] $tab-nav-width [nav-end];
 }
 
 .cursor {

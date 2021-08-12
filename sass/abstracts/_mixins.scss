@@ -33,3 +33,35 @@
 	background-image: $image;
 	background-size: cover;
 }
+
+// MEDIA QUERIES
+
+@mixin respond($breakpoint) {
+	// 1700px
+	@if $breakpoint == largest {
+		@media only screen and (max-width: 106.25em) {
+			@content;
+		}
+	}
+
+	// 1135px
+	@if $breakpoint == large {
+		@media only screen and (max-width: 71.25em) {
+			@content;
+		}
+	}
+
+	// 1060px
+	@if $breakpoint == medium {
+		@media only screen and (max-width: 66.25em) {
+			@content;
+		}
+	}
+
+	// 952px
+	@if $breakpoint == small {
+		@media only screen and (max-width: 59.5em) {
+			@content;
+		}
+	}
+}

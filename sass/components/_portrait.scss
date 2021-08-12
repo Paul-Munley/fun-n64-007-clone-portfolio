@@ -8,12 +8,19 @@
 }
 
 .profile-img--right {
-	display: block;
+	// display: block;
 	position: fixed;
-	right: 0;
-	margin-right: calc(
-		#{$content-full-bleed-col-w} + #{$backgound-padding} + #{$tab-nav-width}
-	);
+	left: calc(55% - #{$content-full-bleed-col-w});
+	margin-right: auto;
+	// right: 0;
+	// margin-right: calc(
+	// 	#{$content-full-bleed-col-w} + #{$backgound-padding} + #{$tab-nav-width}
+	// );
+	// margin-right: 12%;
+
+	@include respond(largest) {
+		left: 55%;
+	}
 }
 
 .paperclip {
@@ -28,7 +35,7 @@
 .portrait {
 	position: relative;
 	z-index: 3;
-	max-height: 45vh;
+	max-height: 45rem;
 	width: auto;
 	box-shadow: -0.4rem 1rem 0.4rem 0.2rem rgba(black, 0.8);
 }

@@ -23,17 +23,17 @@
 		align-items: center;
 		justify-content: center;
 
+		text-decoration: none;
+
 		&:hover {
 			cursor: pointer;
 		}
 
-		&:hover &-link {
+		&:hover &-text {
 			background-color: $background-color-hover-tab-links;
 		}
 
-		&-link,
-		&-link:active,
-		&-link:visited {
+		&-text {
 			// Align text inside tabs to center. Did this to make the background shadow on hover fill up more of the tab. This makes it look more similar to the game.
 			display: flex;
 			justify-content: center;

@@ -23,6 +23,7 @@
 		<link href="../css/style.css" rel="stylesheet" />
 
 		<!-- JS -->
+		<script defer src="../js/helpers.js"></script>
 		<script defer src="../js/mouseMove.js"></script>
 		<script defer src="../js/pageRouting.js"></script>
 		<script defer src="../js/portfolioSlider.js"></script>
@@ -41,19 +42,20 @@
 		<div class="background">
 			<!-- CODE THAT WAS USED TO MAKE PIXELATED BACKGROUND IMAGES KEEPING FOR POSSIBLE FUTURE USE. CONTAINER FOR ALL OF THE PAGE CONTENT WHEN MAKING THE BACKGROUND IMAGES -->
 			<!-- <div class="pixels"></div> -->
+			<div class="container">
 			<div class="content content--portfolio">
 				<h1 class="content__heading content__heading--portfolio">
-					Select Character
+					Select Portfolio
 				</h1>
 				<div class="slider">
 					<div class="slider__container" style="transform: translateX(0)">
 						<div class="slider__item slider__item--1 inactive-left">
 							<div class="img-overlay"></div>
-							<img src="../assets/crypto-project-bw-wide.jpeg" class="slider__img slider__img--1"></img>
+							<img src="../assets/udemy-js-forkify-project-bw.jpg" class="slider__img slider__img--1"></img>
 						</div>
 						<div class="slider__item slider__item--2 active">
 							<div class="img-overlay"></div>
-							<img src="../assets/crypto-project-bw-wide.jpeg" class="slider__img slider__img--2"></img>
+							<img src="../assets/shopping-cart-bw.jpeg" class="slider__img slider__img--2"></img>
 						</div>
 						<div class="slider__item slider__item--3 inactive-right">
 							<div class="img-overlay"></div>
@@ -61,8 +63,12 @@
 						</div>
 					</div>
 					<div class="slider__project-details">
-						<i class="fab fa-github-square"></i>
-						<i class="fas fa-external-link-square-alt"></i>
+						<i class="fab fa-github-square">
+							<a href="" class="slider__github-link"></a>
+						</i>
+						<i class="fas fa-external-link-square-alt">
+							<a href="" class="slider__website-link"></a>
+						</i>
 					</div>
 				</div>
 				<div class="content__project">
@@ -79,17 +85,18 @@
 			</div>
 			<nav class="tab-nav">
 				<ul class="tab-nav__list">
-					<btn class="tab-nav__item">
-						<a href="/index.html" class="tab-nav__item-link"> Home </a>
-					</btn>
-					<btn class="tab-nav__item">
-						<a href="#" class="tab-nav__item-link"> Contact </a>
-					</btn>
-					<btn class="tab-nav__item">
-						<a id="back-link" class="tab-nav__item-link"> Previous </a>
-					</btn>
+					<a href="/index.html" class="tab-nav__item">
+						<p class="tab-nav__item-text">Home</p>
+					</a>
+					<a href="/html/contact.html" class="tab-nav__item">
+						<p class="tab-nav__item-text">Contact</p>
+					</a>
+					<a id="back-link" class="tab-nav__item">
+						<p class="tab-nav__item-text">Previous</p>
+					</a>
 				</ul>
 			</nav>
+		</div>
 		</div>
 	</body>
 </html>

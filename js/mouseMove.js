@@ -36,4 +36,23 @@ const followCursorHandler = e => {
 	mouseCursor.style.left = e.pageX + "px";
 };
 
+// [window, document].forEach(el => {
+// 	el.addEventListener("mousemove", followCursorHandler);
+// 	el.addEventListener("mouseleave", () => {
+// 		mouseCursorImg.removeAttribute("src");
+// 		mouseCursor.style.display = "none";
+// 	});
+// 	el.addEventListener("mouseenter", () => {
+// 		mouseCursorImg.setAttribute("src", "../assets/imgbin_reticle-png.png");
+// 	});
+// });
+
 window.addEventListener("mousemove", followCursorHandler);
+
+// window.addEventListener("mouseleave", () => {
+// 	mouseCursorImg.removeAttribute("src");
+// });
+
+// window.addEventListener("mouseenter", () =>
+// 	mouseCursorImg.setAttribute("src", "../assets/imgbin_reticle-png.png")
+// );

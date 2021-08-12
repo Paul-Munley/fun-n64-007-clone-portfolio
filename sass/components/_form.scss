@@ -1,0 +1,60 @@
+.form {
+	padding: 1rem;
+	flex: 0 0 50%;
+
+	&__heading {
+		font-size: 5rem;
+		margin-bottom: 4rem;
+		@include fuzzy-font;
+	}
+
+	&__input-container {
+	}
+
+	&__label {
+		// font-size: 3rem;
+		width: 3rem;
+	}
+
+	&__group {
+		width: 100%;
+
+		& > input {
+			cursor: none;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 1rem;
+		}
+	}
+
+	&__input {
+		background-image: url(/assets/paper-2.jpg);
+		background-size: cover;
+		border-radius: 3px;
+		border: none;
+		padding: 4rem 1rem 2.5rem 7.75rem;
+		width: 100%;
+		position: relative;
+		display: flex;
+		font-size: 2.25rem;
+		@include fuzzy-font;
+		transition: all 0.5s;
+		box-shadow: none;
+
+		&:focus {
+			outline: none;
+			// caret-color: black;
+			box-shadow: 0 0.2rem 0.75rem black;
+			transition: all 0.5s;
+			color: transparent;
+			text-shadow: none;
+
+			&::placeholder {
+				transition: color 0.5s;
+				color: transparent;
+				text-shadow: none;
+			}
+		}
+	}
+}

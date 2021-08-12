@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!-- FONTS & ICONS -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Odibee+Sans&family=Roboto:wght@300;400&family=Playfair+Display&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+			rel="stylesheet"
+		/>
+		<script
+			src="https://kit.fontawesome.com/0219e4ccf0.js"
+			crossorigin="anonymous"
+		></script>
+
+		<!-- CSS -->
+		<link href="../css/style.css" rel="stylesheet" />
+
+		<!-- JS -->
+		<script defer src="../js/helpers.js"></script>
+		<script defer src="../js/mouseMove.js"></script>
+		<script defer src="../js/pageRouting.js"></script>
+
+		<title>Paul Munley Developer</title>
+	</head>
+	<body>
+		<div class="cursor">
+			<img
+				onerror="cursorErrorHandler()"
+				src="../assets/imgbin_reticle-png.png"
+				alt="Cursor"
+				class="cursor__img"
+			/>
+		</div>
+		<div class="background">
+			<!-- CODE THAT WAS USED TO MAKE PIXELATED BACKGROUND IMAGES KEEPING FOR POSSIBLE FUTURE USE. CONTAINER FOR ALL OF THE PAGE CONTENT WHEN MAKING THE BACKGROUND IMAGES -->
+			<!-- <div class="pixels"></div> -->
+			<div class="container">
+				<div class="content content--contact">
+					<div class="form">
+						<h1 class="form__heading">Contact Agent</h1>
+						<div class="form__input-container">
+							<div class="form__group form__group-name">
+								<label for="Name" class="form__label"></label>
+								<input
+									type="text"
+									name="name"
+									placeholder="Name"
+									value=""
+									class="form__input"
+								/>
+							</div>
+							<div class="form__group form__group-phone">
+								<label for="Phone" class="form__label"></label>
+								<input
+									type="tel"
+									name="phone"
+									placeholder="Telephone"
+									class="form__input"
+								/>
+							</div>
+							<div class="form__group form__group-email">
+								<label for="Email" class="form__label"></label>
+								<input
+									type="email"
+									name="email"
+									placeholder="Email"
+									class="form__input"
+								/>
+							</div>
+						</div>
+					</div>
+				</div>
+				<nav class="tab-nav">
+					<ul class="tab-nav__list">
+						<a href="/index.html" class="tab-nav__item">
+							<p class="tab-nav__item-text">Home</p>
+						</a>
+						<a href="/html/about.html" class="tab-nav__item">
+							<p class="tab-nav__item-text">About</p>
+						</a>
+						<a id="back-link" class="tab-nav__item">
+							<p class="tab-nav__item-text">Previous</p>
+						</a>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</body>
+</html>
