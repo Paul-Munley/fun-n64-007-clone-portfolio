@@ -9,13 +9,19 @@
 html {
 	box-sizing: border-box;
 	font-size: 62.5%; // 10px base
+	overflow: scroll;
+	min-height: 100%;
 
 	@include respond(large) {
 		font-size: 56.25%; // 9px base
 	}
 
-	@include respond(small) {
+	@include respond(medium-2) {
 		font-size: 50%; // 8px base
+	}
+
+	@include respond(x-small-3) {
+		font-size: 43.75%; // 7px base
 	}
 }
 
@@ -31,10 +37,17 @@ body {
 .background {
 	background-image: url(../../assets/main-background-blurred.png);
 	background-size: cover;
+	min-height: 100vh;
+	width: 100%;
 
-	height: 100vh;
-	width: 100vw;
-	padding: $backgound-padding 4rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: $background-padding-tb $background-padding-lr;
+
+	@include respond(x-small) {
+		padding: $background-padding-tb 2rem;
+	}
 
 	// display: grid;
 	// justify-items: center;
@@ -49,10 +62,19 @@ body {
 	grid-column: container-start / container-end;
 	height: 880px;
 	max-width: 1102px;
-	margin: 0 auto;
+	position: relative;
 
 	display: grid;
 	grid-template-columns: [container-start] 1fr [container-end nav-start] $tab-nav-width [nav-end];
+
+	@include respond(small-3) {
+		width: 614px;
+	}
+
+	&--contact {
+		// Not sure why the contact page needed a flex grow propery specified. Maybe it's because of the content in the other pages?
+		flex: 1;
+	}
 }
 
 .cursor {
@@ -61,6 +83,10 @@ body {
 	position: absolute;
 	transform: translate(-50%, -50%);
 	pointer-events: none;
+
+	@media (hover: none) {
+		display: none;
+	}
 
 	img {
 		height: 6rem;

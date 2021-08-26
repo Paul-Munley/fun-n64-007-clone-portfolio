@@ -13,19 +13,31 @@
 			rel="stylesheet"
 		/>
 
+		<!-- CURSOR IMAGE -->
+		<!-- <link
+			rel="preload"
+			href="./assets/imgbin_reticle-png.pn"
+			class="preloaded-cursor"
+		/> -->
+
 		<!-- CSS -->
 		<link href="css/style.css" rel="stylesheet" />
 
 		<!-- JS -->
-		<script defer src="js/mouseMove.js"></script>
 		<script defer src="js/pageRouting.js"></script>
+		<script defer src="js/mouseMove.js"></script>
 
 		<title>Paul Munley Developer</title>
 	</head>
 	<body>
 		<div class="cursor">
-			<img
+			<!-- <img
 				onerror="cursorErrorHandler()"
+				src="assets/imgbin_reticle-png.pn"
+				alt="Cursor"
+				class="cursor__img"
+			/> -->
+			<img
 				src="assets/imgbin_reticle-png.png"
 				alt="Cursor"
 				class="cursor__img"
@@ -35,50 +47,47 @@
 			<!-- CODE THAT WAS USED TO MAKE PIXELATED BACKGROUND IMAGES KEEPING FOR POSSIBLE FUTURE USE. CONTAINER FOR ALL OF THE PAGE CONTENT WHEN MAKING THE BACKGROUND IMAGES -->
 			<!-- <div class="pixels"></div> -->
 			<div class="container">
+				<div class="profile-img">
+					<img
+						src="/assets/paperclip-2.png"
+						alt="Paperclip"
+						class="paperclip paperclip--right"
+					/>
+					<img
+						src="/assets/paul-head-bw.jpeg"
+						alt="Picture of Developer Paul"
+						class="portrait"
+					/>
+				</div>
 				<div class="content content--home">
-					<div class="profile-img">
-						<img
-							src="/assets/paperclip-2.png"
-							alt="Paperclip"
-							class="paperclip"
-						/>
-						<img
-							src="/assets/paul-updated-u.jpeg"
-							alt="Picture of Developer Paul"
-							class="portrait"
-						/>
-					</div>
 					<img
 						src="/assets/logo-crest-2.png"
 						alt="Main Menu Crest"
 						class="crest"
 					/>
 					<nav class="nav nav--main">
-						<ul class="nav__list nav--main">
-							<li class="nav__item nav--main">
-								<span class="nav__text nav--main">1.</span>
-								<span class="nav__text nav--main">Home</span>
+						<ul class="nav__list">
+							<li class="nav__item">
+								<span class="nav__text">1.</span>
+								<span class="nav__text">Home</span>
+							</li>
+							<li class="nav__item" onclick="location.href='/html/about.html'">
+								<span class="nav__text">2.</span>
+								<span class="nav__text">About</span>
 							</li>
 							<li
-								class="nav__item nav--main"
-								onclick="location.href='/html/about.html'"
-							>
-								<span class="nav__text nav--main">2.</span>
-								<span class="nav__text nav--main">About</span>
-							</li>
-							<li
-								class="nav__item nav--main"
+								class="nav__item"
 								onclick="location.href='/html/portfolio.html'"
 							>
-								<span class="nav__text nav--main">3.</span>
-								<span class="nav__text nav--main">Portolio</span>
+								<span class="nav__text">3.</span>
+								<span class="nav__text">Portolio</span>
 							</li>
 							<li
-								class="nav__item nav--main"
+								class="nav__item"
 								onclick="location.href='/html/contact.html'"
 							>
-								<span class="nav__text nav--main"> 4.</span>
-								<span class="nav__text nav--main">Contact</span>
+								<span class="nav__text"> 4.</span>
+								<span class="nav__text">Contact</span>
 							</li>
 						</ul>
 					</nav>

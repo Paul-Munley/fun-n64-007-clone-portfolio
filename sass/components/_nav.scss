@@ -2,6 +2,19 @@
 	align-self: center;
 	z-index: 1;
 
+	// IF STILL USING GRID
+	@include respond(medium-2) {
+		margin-left: -5rem;
+	}
+
+	@include respond(small-3) {
+		margin-left: -7.5rem;
+	}
+
+	@include respond(x-small-2) {
+		margin-left: -10.5rem;
+	}
+
 	&__list {
 		list-style-type: none;
 	}
@@ -12,15 +25,25 @@
 		width: fit-content;
 		padding: 0.5rem;
 
-		font-size: 3rem;
+		font-size: 30px;
 		font-weight: 300;
 		text-decoration: none;
 		text-transform: uppercase;
 		@include fuzzy-font;
 
+		&.default-cursor {
+			&:hover {
+				cursor: pointer;
+			}
+		}
+
 		span {
 			&:not(:last-child) {
 				margin-right: 2.5rem;
+
+				@include respond(x-small-2) {
+					margin-right: 1rem;
+				}
 			}
 		}
 

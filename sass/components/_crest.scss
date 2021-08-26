@@ -9,4 +9,13 @@
 	@include respond(medium) {
 		grid-column: col-start 9 / full-end;
 	}
+
+	@include respond(small-2) {
+		transform: scale(0.9);
+		grid-column: col-start 8 / full-end;
+	}
+
+	@include respond(small-3) {
+		display: none;
+	}
 }

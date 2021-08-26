@@ -7,13 +7,18 @@
 
 html {
   box-sizing: border-box;
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  overflow: scroll;
+  min-height: 100%; }
   @media only screen and (max-width: 71.25em) {
     html {
       font-size: 56.25%; } }
   @media only screen and (max-width: 59.5em) {
     html {
       font-size: 50%; } }
+  @media only screen and (max-width: 24.75em) {
+    html {
+      font-size: 43.75%; } }
 
 body {
   font-family: "Roboto", sans-serif;
@@ -24,17 +29,28 @@ body {
 .background {
   background-image: url(../../assets/main-background-blurred.png);
   background-size: cover;
-  height: 100vh;
-  width: 100vw;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 8rem 4rem; }
+  @media only screen and (max-width: 36em) {
+    .background {
+      padding: 8rem 2rem; } }
 
 .container {
   grid-column: container-start / container-end;
   height: 880px;
   max-width: 1102px;
-  margin: 0 auto;
+  position: relative;
   display: grid;
   grid-template-columns: [container-start] 1fr [container-end nav-start] 5rem [nav-end]; }
+  @media only screen and (max-width: 42.25em) {
+    .container {
+      width: 614px; } }
+  .container--contact {
+    flex: 1; }
 
 .cursor {
   z-index: 15;
@@ -42,6 +58,9 @@ body {
   position: absolute;
   transform: translate(-50%, -50%);
   pointer-events: none; }
+  @media (hover: none) {
+    .cursor {
+      display: none; } }
   .cursor img {
     height: 6rem;
     width: 6rem; }
@@ -77,6 +96,7 @@ WAS THE CODE USED TO RECREATE THE PIXELATED LOOK IN THE BACKGROUND AND MANILA FO
   position: absolute;
   bottom: 0; }
   .background-text__text {
+    white-space: nowrap;
     position: relative;
     text-transform: uppercase;
     font-size: 14rem;
@@ -88,7 +108,8 @@ WAS THE CODE USED TO RECREATE THE PIXELATED LOOK IN THE BACKGROUND AND MANILA FO
   grid-column: container-start / container-end;
   display: grid;
   position: relative;
-  overflow: hidden; }
+  overflow: hidden;
+  padding: 1rem; }
 
 .crest {
   background-image: url(/assets/logo-crest-2.png);
@@ -100,6 +121,13 @@ WAS THE CODE USED TO RECREATE THE PIXELATED LOOK IN THE BACKGROUND AND MANILA FO
   @media only screen and (max-width: 66.25em) {
     .crest {
       grid-column: col-start 9 / full-end; } }
+  @media only screen and (max-width: 51em) {
+    .crest {
+      transform: scale(0.9);
+      grid-column: col-start 8 / full-end; } }
+  @media only screen and (max-width: 42.25em) {
+    .crest {
+      display: none; } }
 
 .form {
   padding: 1rem;
@@ -109,10 +137,16 @@ WAS THE CODE USED TO RECREATE THE PIXELATED LOOK IN THE BACKGROUND AND MANILA FO
     margin-bottom: 4rem;
     color: transparent;
     text-shadow: 0 0 2px #000; }
+    @media only screen and (max-width: 42.25em) {
+      .form__heading {
+        white-space: nowrap; } }
+  .form__input-container {
+    word-wrap: none; }
   .form__label {
     width: 3rem; }
   .form__group {
-    width: 100%; }
+    width: 100%;
+    min-width: 31.5rem; }
     .form__group > input {
       cursor: none; }
     .form__group:not(:last-child) {
@@ -129,61 +163,105 @@ WAS THE CODE USED TO RECREATE THE PIXELATED LOOK IN THE BACKGROUND AND MANILA FO
     font-size: 2.25rem;
     color: transparent;
     text-shadow: 0 0 2px #000;
-    transition: all 0.5s;
-    box-shadow: none; }
+    transition: all 0.5s; }
     .form__input:focus {
       outline: none;
-      box-shadow: 0 0.2rem 0.75rem black;
+      caret-color: black;
       transition: all 0.5s;
       color: transparent;
-      text-shadow: none; }
+      box-shadow: 0 0.2rem 0.75rem black; }
       .form__input:focus::placeholder {
-        transition: color 0.5s;
+        transition: all 0.5s;
         color: transparent;
         text-shadow: none; }
 
 .nav {
   align-self: center;
   z-index: 1; }
+  @media only screen and (max-width: 59.5em) {
+    .nav {
+      margin-left: -5rem; } }
+  @media only screen and (max-width: 42.25em) {
+    .nav {
+      margin-left: -7.5rem; } }
+  @media only screen and (max-width: 28.25em) {
+    .nav {
+      margin-left: -10.5rem; } }
   .nav__list {
     list-style-type: none; }
   .nav__item, .nav__item:active, .nav__item:visited {
     width: fit-content;
     padding: 0.5rem;
-    font-size: 3rem;
+    font-size: 30px;
     font-weight: 300;
     text-decoration: none;
     text-transform: uppercase;
     color: transparent;
     text-shadow: 0 0 2px #000; }
+    .nav__item.default-cursor:hover, .nav__item:active.default-cursor:hover, .nav__item:visited.default-cursor:hover {
+      cursor: pointer; }
     .nav__item span:not(:last-child), .nav__item:active span:not(:last-child), .nav__item:visited span:not(:last-child) {
       margin-right: 2.5rem; }
+      @media only screen and (max-width: 28.25em) {
+        .nav__item span:not(:last-child), .nav__item:active span:not(:last-child), .nav__item:visited span:not(:last-child) {
+          margin-right: 1rem; } }
     .nav__item:not(:last-child), .nav__item:active:not(:last-child), .nav__item:visited:not(:last-child) {
       margin-bottom: 3rem; }
   .nav__item:hover {
     background-color: rgba(0, 0, 0, 0.2); }
 
 .profile-img {
-  position: fixed;
-  margin-top: -1rem;
+  position: absolute;
+  margin-top: -2rem;
   margin-left: 4rem;
-  z-index: 3; }
+  z-index: 3;
+  width: fit-content; }
+  @media only screen and (max-width: 51em) {
+    .profile-img {
+      margin-top: -2rem;
+      margin-left: 2rem; } }
+  @media only screen and (max-width: 42.25em) {
+    .profile-img {
+      margin-left: -2.25rem;
+      margin-top: -2rem;
+      left: 50%;
+      transform: translateX(-50%); } }
+  @media only screen and (max-width: 28.25em) {
+    .profile-img {
+      margin-top: -2.75rem;
+      left: 50%;
+      transform: translateX(-50%) scale(0.95); } }
 
 .profile-img--right {
-  position: fixed;
-  left: calc(55% - 4rem);
-  margin-right: auto; }
-  @media only screen and (max-width: 106.25em) {
+  position: absolute;
+  right: 0;
+  margin-right: 6rem; }
+  @media only screen and (max-width: 51em) {
     .profile-img--right {
-      left: 55%; } }
+      margin-top: -2rem;
+      left: 0;
+      margin-right: 0; } }
+  @media only screen and (max-width: 42.25em) {
+    .profile-img--right {
+      margin-left: 2rem;
+      transform: none; } }
+  @media only screen and (max-width: 24.75em) {
+    .profile-img--right {
+      margin-left: 0.2rem;
+      transform: scale(0.95); } }
 
 .paperclip {
   position: absolute;
   z-index: 4;
-  margin-top: -3.7rem;
+  margin-top: -3.75rem;
   margin-left: 2rem;
   height: 8rem;
   width: auto; }
+  .paperclip--right {
+    height: 12.25rem;
+    width: auto;
+    margin-left: 4rem;
+    margin-top: -5.7rem; }
 
 .portrait {
   position: relative;
@@ -196,7 +274,6 @@ WAS THE CODE USED TO RECREATE THE PIXELATED LOOK IN THE BACKGROUND AND MANILA FO
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-items: center;
   justify-content: center;
   align-items: center;
   font-family: "Roboto", sans-serif; }
@@ -204,8 +281,7 @@ WAS THE CODE USED TO RECREATE THE PIXELATED LOOK IN THE BACKGROUND AND MANILA FO
 .content__heading--portfolio {
   color: transparent;
   text-shadow: 0 0 2px #000;
-  font-size: 4rem;
-  flex: 0 0 fit-content; }
+  font-size: 4rem; }
 
 .content__project-name--portfolio {
   color: transparent;
@@ -217,6 +293,9 @@ WAS THE CODE USED TO RECREATE THE PIXELATED LOOK IN THE BACKGROUND AND MANILA FO
   font-size: 8rem;
   color: transparent;
   text-shadow: 0 0 2px #000; }
+  @media only screen and (max-width: 28.25em) {
+    .content__icon {
+      font-size: 6rem; } }
 
 .content__project {
   width: 100%;
@@ -225,15 +304,24 @@ WAS THE CODE USED TO RECREATE THE PIXELATED LOOK IN THE BACKGROUND AND MANILA FO
   justify-content: space-between; }
   .content__project-name {
     font-size: 4rem; }
+    @media only screen and (max-width: 36em) {
+      .content__project-name {
+        text-align: center; } }
+    @media only screen and (max-width: 28.25em) {
+      .content__project-name {
+        text-align: center;
+        font-size: 3rem; } }
 
 .slider {
   flex: 0 0 80%;
   overflow: visible;
   width: 100%;
-  margin: 0 auto;
   position: relative;
   display: flex;
   align-items: center; }
+  @media only screen and (max-width: 36em) {
+    .slider {
+      flex: 0 0 50%; } }
   .slider__container {
     display: flex;
     justify-content: center;
@@ -332,6 +420,30 @@ WAS THE CODE USED TO RECREATE THE PIXELATED LOOK IN THE BACKGROUND AND MANILA FO
       transform: scaleX(0.5);
       letter-spacing: 4px; }
 
+@media only screen and (max-width: 51em) {
+  .container--about {
+    height: 1000px; } }
+
+@media only screen and (max-width: 42.25em) {
+  .container--about {
+    width: 614px; } }
+
+@media only screen and (max-width: 36em) {
+  .container--about {
+    height: 950px; } }
+
+@media only screen and (max-width: 28.25em) {
+  .container--about {
+    height: 1000px; } }
+
+@media only screen and (max-width: 24.75em) {
+  .container--about {
+    height: 900px; } }
+
+@media only screen and (max-width: 51em) {
+  .content--about {
+    grid-template-rows: 40% 1fr; } }
+
 .portrait--right {
   box-shadow: none; }
 
@@ -340,19 +452,89 @@ WAS THE CODE USED TO RECREATE THE PIXELATED LOOK IN THE BACKGROUND AND MANILA FO
   margin-top: 7vh;
   color: transparent;
   text-shadow: 0 0 2px #000; }
+  @media only screen and (max-width: 51em) {
+    .summary {
+      grid-row: 2 / -1;
+      margin-top: 0; } }
   .summary__heading-container {
     height: fit-content;
     margin: 5rem 0 3rem 0;
     margin-left: 2rem; }
+    @media only screen and (max-width: 51em) {
+      .summary__heading-container {
+        margin-top: 3rem;
+        margin-bottom: 1rem; } }
+    @media only screen and (max-width: 24.75em) {
+      .summary__heading-container {
+        margin-left: 0; } }
+    @media only screen and (max-width: 28.25em) {
+      .summary__heading-container-name {
+        margin-top: 0;
+        margin-bottom: 1rem; } }
+    @media only screen and (max-width: 24.75em) {
+      .summary__heading-container-name {
+        margin-top: -2rem; } }
   .summary__heading {
-    transform: scale(0.93, 1.3); }
+    transform: scale(0.93, 1.3);
+    flex: 0 0 auto;
+    width: fit-content; }
+    @media only screen and (max-width: 55em) {
+      .summary__heading {
+        transform: scale(0.85, 1.22);
+        margin-left: -4rem; } }
+    @media only screen and (max-width: 36em) {
+      .summary__heading {
+        transform: scale(0.7, 1.08);
+        margin-left: -8.5rem;
+        white-space: nowrap; } }
+    @media only screen and (max-width: 28.25em) {
+      .summary__heading {
+        transform: scale(0.6, 0.98);
+        margin-left: -12rem; } }
+    .summary__heading-secondary {
+      font-weight: bold; }
+      @media only screen and (max-width: 36em) {
+        .summary__heading-secondary {
+          font-size: 3.2rem; } }
   .summary__list {
     list-style-type: none;
     margin-left: 2rem; }
-  .summary__item:not(:last-child) {
-    margin-bottom: 0.5rem; }
+    @media only screen and (max-width: 24.75em) {
+      .summary__list {
+        margin-left: 0; } }
+  .summary__item {
+    width: 95%; }
+    @media only screen and (max-width: 28.25em) {
+      .summary__item {
+        width: 80%; } }
+    .summary__item:not(:last-child) {
+      margin-bottom: 0.5rem; }
+    @media only screen and (max-width: 36em) {
+      .summary__item--details {
+        width: 90%; } }
+    @media only screen and (max-width: 28.25em) {
+      .summary__item--details {
+        width: 80%; } }
+    @media only screen and (max-width: 24.75em) {
+      .summary__item--details {
+        width: 75%; } }
+    @media only screen and (max-width: 51em) {
+      .summary__item--details:not(:last-child) {
+        margin-bottom: 2rem; } }
   .summary__text {
     font-size: 4rem; }
+    @media only screen and (max-width: 55em) {
+      .summary__text {
+        font-size: 3.75rem; } }
+    @media only screen and (max-width: 42.25em) {
+      .summary__text {
+        font-size: 3.5rem; } }
+    @media only screen and (max-width: 36em) {
+      .summary__text {
+        font-size: 3.2rem; } }
+    @media only screen and (max-width: 24.75em) {
+      .summary__text {
+        font-size: 3.2rem; } }
 
 .background-text--about {
   overflow: hidden;
@@ -362,6 +544,22 @@ WAS THE CODE USED TO RECREATE THE PIXELATED LOOK IN THE BACKGROUND AND MANILA FO
   z-index: 0;
   left: 15%;
   bottom: 12%; }
+  @media only screen and (max-width: 51em) {
+    .background-text--about {
+      margin-left: -4rem;
+      margin-bottom: -2rem; } }
+  @media only screen and (max-width: 42.25em) {
+    .background-text--about {
+      margin-left: -16rem;
+      margin-bottom: -2rem; } }
+  @media only screen and (max-width: 36em) {
+    .background-text--about {
+      margin-left: -22rem;
+      margin-bottom: -2rem; } }
+  @media only screen and (max-width: 28.25em) {
+    .background-text--about {
+      margin-left: -16rem;
+      margin-bottom: -4rem; } }
   .background-text--about p {
     text-shadow: 2px 2px 3px rgba(207, 86, 84, 0.4); }
 
@@ -371,12 +569,14 @@ WAS THE CODE USED TO RECREATE THE PIXELATED LOOK IN THE BACKGROUND AND MANILA FO
   justify-content: center; }
 
 .nav--main {
-  grid-column: 8 / -1; }
+  grid-column: 8 / -1;
+  grid-row: 2 / -1; }
 
-.content--home {
-  grid-template-columns: [full-start] 4rem repeat(14, [col-start] 1fr [col-end]) 4rem [full-end];
-  grid-template-rows: repeat(2, 1fr);
-  justify-content: center; }
+.content {
+  position: relative; }
+  .content--home {
+    grid-template-columns: [full-start] 4rem repeat(14, [col-start] 1fr [col-end]) 4rem [full-end];
+    grid-template-rows: repeat(2, 1fr); }
 
 .background-text--home {
   overflow: hidden;
@@ -384,3 +584,18 @@ WAS THE CODE USED TO RECREATE THE PIXELATED LOOK IN THE BACKGROUND AND MANILA FO
   margin-bottom: -1rem;
   grid-column: 5 / -1;
   z-index: 0; }
+  @media only screen and (max-width: 66.25em) {
+    .background-text--home {
+      grid-column: 3 / -1;
+      transform: rotate(-50deg); } }
+  @media only screen and (max-width: 51em) {
+    .background-text--home {
+      grid-column: 1 / -1;
+      margin-bottom: 4rem;
+      position: absolute; } }
+  @media only screen and (max-width: 36em) {
+    .background-text--home {
+      grid-column: 1 / -1;
+      margin-bottom: 4rem;
+      position: absolute;
+      margin-left: -8.5rem; } }

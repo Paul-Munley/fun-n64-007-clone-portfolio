@@ -15,6 +15,11 @@ let currentSlide = 2;
 
 const setSlideStyling = () => {
 	slides.forEach((slide, i) => {
+		if (window.innerWidth < 452) {
+			slide.classList.remove("active", "inactive-right", "inactive-left");
+			return;
+		}
+
 		// LOGIC FOR SLIDE PROJECT IMAGE STYLING
 		const slideIsActive = currentSlide === i + 1;
 		const slideIsLeft = i + 1 < currentSlide;
@@ -53,6 +58,7 @@ const setSlideStyling = () => {
 		}
 	});
 };
+console.log(window.innerWidth);
 
 // TODO - May be better in the future to add a state folder if you start to add a lot of projects to your portfolio.
 // LOGIC FOR SLIDE PROJECT NAMES

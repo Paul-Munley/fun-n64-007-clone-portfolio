@@ -3,6 +3,7 @@
 	bottom: 0;
 
 	&__text {
+		white-space: nowrap;
 		position: relative;
 		text-transform: uppercase;
 		font-size: 14rem;

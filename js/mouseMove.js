@@ -18,12 +18,15 @@ let cursorError = false;
 
 // When there's an error loading custom cursor img
 const cursorErrorHandler = () => {
+	console.log("hola");
 	cursorError = true;
 	mouseCursorImg.style.display = "none";
 	body.style.cursor = "default";
+	// items.forEach( item => item.classList.add("default-cursor"));
 };
 
 if (!cursorError);
+console.log("hello");
 
 // Change to no cursors for nav items, nav links, and page tabs to prevent :hover pointer
 items.forEach(item => (item.style.cursor = "none"));
@@ -48,6 +51,7 @@ const followCursorHandler = e => {
 // });
 
 window.addEventListener("mousemove", followCursorHandler);
+// mouseCursorImg.addEventListener();
 
 // window.addEventListener("mouseleave", () => {
 // 	mouseCursorImg.removeAttribute("src");

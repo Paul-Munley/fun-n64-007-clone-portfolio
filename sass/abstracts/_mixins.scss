@@ -59,8 +59,50 @@
 	}
 
 	// 952px
-	@if $breakpoint == small {
+	@if $breakpoint == medium-2 {
 		@media only screen and (max-width: 59.5em) {
+			@content;
+		}
+	}
+
+	// 880px
+	@if $breakpoint == small {
+		@media only screen and (max-width: 55em) {
+			@content;
+		}
+	}
+
+	// 816px
+	@if $breakpoint == small-2 {
+		@media only screen and (max-width: 51em) {
+			@content;
+		}
+	}
+
+	// 676px
+	@if $breakpoint == small-3 {
+		@media only screen and (max-width: 42.25em) {
+			@content;
+		}
+	}
+
+	// 576px
+	@if $breakpoint == x-small {
+		@media only screen and (max-width: 36em) {
+			@content;
+		}
+	}
+
+	// 452px
+	@if $breakpoint == x-small-2 {
+		@media only screen and (max-width: 28.25em) {
+			@content;
+		}
+	}
+
+	// 396px
+	@if $breakpoint == x-small-3 {
+		@media only screen and (max-width: 24.75em) {
 			@content;
 		}
 	}
