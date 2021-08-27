@@ -1,7 +1,7 @@
 # Remove html folder from different page domains
-/html/index.html					/
-/html/about.html					/about
-/html/portfolio.html			/portfolio
-/html/contact.html				/contact
+/index.html												/
+/html/about.html									/about
+/html/portfolio.html							/portfolio
+/html/contact.html								/contact
 
 
