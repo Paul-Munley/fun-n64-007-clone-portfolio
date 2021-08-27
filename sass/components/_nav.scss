@@ -19,17 +19,27 @@
 		list-style-type: none;
 	}
 
-	&__item,
-	&__item:active,
-	&__item:visited {
+	&__item {
 		width: fit-content;
-		padding: 0.5rem;
 
+		&:hover {
+			background-color: $background-color-hover-main-links;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 3rem;
+		}
+	}
+
+	&__link,
+	&__link:active,
+	&__link:visited {
 		font-size: 30px;
 		font-weight: 300;
 		text-decoration: none;
 		text-transform: uppercase;
 		@include fuzzy-font;
+		margin: 1.5rem;
 
 		&.default-cursor {
 			&:hover {
@@ -46,15 +56,11 @@
 				}
 			}
 		}
-
-		&:not(:last-child) {
-			margin-bottom: 3rem;
-		}
 	}
 
-	&__item:hover {
-		background-color: $background-color-hover-main-links;
-	}
+	// &__item:hover {
+	// 	background-color: $background-color-hover-main-links;
+	// }
 
 	// &__link,
 	// &__link:active,
