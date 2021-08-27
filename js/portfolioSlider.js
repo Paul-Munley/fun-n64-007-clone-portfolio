@@ -83,7 +83,7 @@ const setActiveSlideDetails = () => {
 			target: "_blank",
 		});
 		setAttributes(projectLink, {
-			href: "https://github.com/Paul-Munley/multitracks",
+			href: "https://multitracks-shopping-cart.netlify.app/",
 			target: "_blank",
 		});
 	}
