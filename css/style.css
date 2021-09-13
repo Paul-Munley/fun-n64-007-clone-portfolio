@@ -291,6 +291,7 @@ WAS THE CODE USED TO RECREATE THE PIXELATED LOOK IN THE BACKGROUND AND MANILA FO
   flex: 0 0 fit-content; }
 
 .content__icon {
+  user-select: none;
   font-size: 8rem;
   color: transparent;
   text-shadow: 0 0 2px #000; }

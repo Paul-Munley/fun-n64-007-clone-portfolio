@@ -64,14 +64,14 @@ console.log(window.innerWidth);
 // LOGIC FOR SLIDE PROJECT NAMES
 const setActiveSlideDetails = () => {
 	if (currentSlide === 1) {
-		projectName.innerHTML = "Udemy JS Forkify Project";
+		projectName.innerHTML = "Update Profile Page";
 		setAttributes(githubLink, {
-			href: "https://github.com/Paul-Munley/UdemyJSForkifyProject",
+			href: "https://github.com/Paul-Munley/update-profile-information-page",
 			target: "_blank",
 		});
 
 		setAttributes(projectLink, {
-			href: "https://forkify-paul.netlify.app/",
+			href: "https://mivation-project.netlify.app/",
 			target: "_blank",
 		});
 	}

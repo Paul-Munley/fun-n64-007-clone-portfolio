@@ -26,6 +26,7 @@
 	// LEFT & RIGHT ICONS FOR PROJECT NAME
 	// AND DETAILS SECTION
 	&__icon {
+		user-select: none;
 		font-size: 8rem;
 		@include fuzzy-font;
 
