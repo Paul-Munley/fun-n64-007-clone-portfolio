@@ -4,6 +4,7 @@ This portfolio was built with the intention of having a UI that is a clone of th
 
 #### 🔗 Link to Portfolio Page: https://paulmunley.dev/
 
+
 ## Screenshot of Actual Game
 ![Screenshot of Game](https://github.com/Paul-Munley/paul-munleys-portfolio/blob/master/assets/actual-game-screenshot.jpeg)
 
