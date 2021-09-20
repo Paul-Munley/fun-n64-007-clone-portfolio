@@ -1,4 +1,4 @@
-# paul-munleys-portfolio (N64 007 Goldeneye Main Menu Clone) 🕵🏻‍♂️
+# Paul Munley's Portfolio (N64 007 Goldeneye Main Menu Clone) 🕵🏻‍♂️
 
 This portfolio was built with the intention of having a UI that is a clone of the old school N64 007 Goldeneye Main Menu. Below are screenshots to display the accuracy of the clone.
 
